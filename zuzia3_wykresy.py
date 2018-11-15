@@ -16,7 +16,7 @@ def main():
     temp = 0
     voltage = []
     current = []
-    powa = []
+    multiply_vxi = []
         
     for line in filein.readlines():
         if not line.startswith("#"):
@@ -25,12 +25,12 @@ def main():
             current.append(float(tokens[1]))
             voltage_data = float(tokens[0])
             current_data = float(tokens[1])
-            powa.append(voltage_data*current_data)
+            multiply_vxi.append(voltage_data*current_data)
             power_data.append(logpower(voltage_data, current_data))
             temp += t
             time_data.append(temp)
     filein.close()
-    plt.plot(time_data, power_data, time_data, voltage, time_data, current, time_data, powa)
+    plt.plot(time_data, power_data, time_data, voltage, time_data, current, time_data, multiply_vxi)
     plt.grid()
     plt.title("Circuit at a rate of 25kHz")
     plt.xlabel("Time [s]")

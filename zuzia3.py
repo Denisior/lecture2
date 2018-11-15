@@ -26,7 +26,7 @@ def main():
     filein.close()
     plt.plot(time_data, power_data)
     plt.grid()
-    plt.title("Circuit at a rate of 25kHz")
+    plt.title("Circuit rate of 25kHz")
     plt.xlabel("Time [s]")
     plt.ylabel("ln(Power) [W]")
     plt.legend(('p(t)', ''))
